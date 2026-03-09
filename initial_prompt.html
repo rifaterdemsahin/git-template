@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>git-template – Copilot Initial Prompt</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Usage Guide</a>
+    <a href="initial_prompt.html" class="active">Copilot Initial Prompt</a>
+    <a href="flow.html">Flow</a>
+  </nav>
+
+  <h1>Copilot Initial Prompt</h1>
+  <p>
+    After creating your new repository from this template, the first thing
+    you should do is send GitHub Copilot a structured initial prompt that
+    gives it full context about your project.  A well-crafted first message
+    dramatically improves every subsequent Copilot suggestion.
+  </p>
+
+  <h2>Why send an initial prompt?</h2>
+  <p>
+    GitHub Copilot has no knowledge of <em>your</em> project goals unless you
+    tell it.  By sending a single, clear prompt right after cloning, you:
+  </p>
+  <ul>
+    <li>Give Copilot the project name, purpose, and tech stack.</li>
+    <li>Set the coding conventions you want it to follow.</li>
+    <li>Establish the tone and scope so suggestions stay on target.</li>
+  </ul>
+
+  <h2>The initial prompt command</h2>
+  <p>
+    Open <strong>GitHub Copilot Chat</strong> (VS Code sidebar or
+    <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd>) and paste the following
+    prompt, replacing the placeholder values with your own details:
+  </p>
+  <pre><code>You are helping me build a project called [PROJECT_NAME].
+
+Tech stack: [e.g. TypeScript, React, Node.js, PostgreSQL]
+Purpose: [one-sentence description of what the project does]
+Coding conventions:
+  - Use [tabs / 2-space / 4-space] indentation
+  - Prefer [async/await / Promises / callbacks]
+  - Follow [Airbnb / Google / Standard] style guide
+  - Write tests with [Jest / Vitest / Mocha]
+
+Please keep all suggestions consistent with these conventions
+and ask me before introducing any new dependency.</code></pre>
+
+  <div class="tip">
+    <strong>Tip:</strong> You can store this prompt in a file called
+    <code>.github/copilot-instructions.md</code> in your repository.
+    Copilot Chat automatically picks it up as workspace instructions,
+    so you never have to paste it manually again.
+  </div>
+
+  <h2>Example filled-in prompt</h2>
+  <pre><code>You are helping me build a project called my-new-project.
+
+Tech stack: TypeScript, Node.js, Express, SQLite
+Purpose: A REST API that tracks personal reading goals.
+Coding conventions:
+  - Use 2-space indentation
+  - Prefer async/await
+  - Follow the Airbnb style guide
+  - Write tests with Jest
+
+Please keep all suggestions consistent with these conventions
+and ask me before introducing any new dependency.</code></pre>
+
+  <h2>Using <code>.github/copilot-instructions.md</code></h2>
+  <p>
+    To make the instructions permanent and shareable with your whole team,
+    create the file in your repository:
+  </p>
+  <pre><code>mkdir -p .github
+cat &gt; .github/copilot-instructions.md &lt;&lt; 'EOF'
+You are helping me build a project called my-new-project.
+
+Tech stack: TypeScript, Node.js, Express, SQLite
+Purpose: A REST API that tracks personal reading goals.
+Coding conventions:
+  - Use 2-space indentation
+  - Prefer async/await
+  - Follow the Airbnb style guide
+  - Write tests with Jest
+
+Please keep all suggestions consistent with these conventions
+and ask me before introducing any new dependency.
+EOF</code></pre>
+
+  <div class="note">
+    <strong>Note:</strong> The <code>copilot-instructions.md</code> feature
+    requires GitHub Copilot Chat and a compatible editor extension (VS Code
+    v1.90+ or JetBrains 2024.1+).  See the
+    <a href="https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot"
+       target="_blank" rel="noopener">GitHub Docs</a> for the full reference.
+  </div>
+
+  <h2>Further reading</h2>
+  <ul>
+    <li>
+      <a href="https://docs.github.com/en/copilot/using-github-copilot/best-practices-for-using-github-copilot"
+         target="_blank" rel="noopener">
+        Best practices for using GitHub Copilot
+      </a>
+    </li>
+    <li>
+      <a href="https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot"
+         target="_blank" rel="noopener">
+        Adding repository custom instructions for GitHub Copilot
+      </a>
+    </li>
+    <li>
+      <a href="index.html">Usage Guide – creating a repo from this template</a>
+    </li>
+  </ul>
+
+</body>
+</html>

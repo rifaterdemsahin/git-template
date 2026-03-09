@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>git-template – Flow</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .mermaid {
+      background: #f6f8fa;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      padding: 24px 16px;
+      margin: 24px 0;
+      overflow-x: auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Usage Guide</a>
+    <a href="initial_prompt.html">Copilot Initial Prompt</a>
+    <a href="flow.html" class="active">Flow</a>
+  </nav>
+
+  <h1>Template Usage &amp; Copilot Initial Prompt – Flow</h1>
+  <p>
+    The diagram below shows the end-to-end journey from discovering this
+    template through to having GitHub Copilot fully primed and ready to help
+    you build your project.
+  </p>
+
+  <div class="mermaid">
+flowchart TD
+    A([🧑‍💻 Developer]) --> B[Browse GitHub\nfor a template]
+    B --> C{Found\nrifaterdemsahin/\ngit-template?}
+    C -- No --> B
+    C -- Yes --> D["Mark repo as Template\n(Settings → General\n→ Template repository ✔)"]
+    D --> E["Run gh repo create\n--template rifaterdemsahin/git-template\n--public --clone"]
+    E --> F[New repo created\nwith clean history]
+    F --> G[cd my-new-project]
+    G --> H[Open project\nin VS Code]
+    H --> I[Open GitHub\nCopilot Chat]
+    I --> J{"Does\n.github/copilot-instructions.md\nexist?"}
+    J -- Yes --> K[Copilot auto-loads\nworkspace instructions]
+    J -- No --> L["Paste Initial Prompt\nin Copilot Chat:\n• Project name\n• Tech stack\n• Purpose\n• Conventions"]
+    L --> M["Optionally save prompt to\n.github/copilot-instructions.md\nfor the whole team"]
+    M --> K
+    K --> N([🚀 Start Building\nwith Copilot])
+
+    style A fill:#ddf4ff,stroke:#54aeff
+    style N fill:#dafbe1,stroke:#4ac26b
+    style D fill:#fff8c5,stroke:#d4a72c
+    style L fill:#fff8c5,stroke:#d4a72c
+    style M fill:#fff8c5,stroke:#d4a72c
+  </div>
+
+  <h2>Step-by-step explanation</h2>
+  <ol>
+    <li>
+      <strong>Find the template</strong> — Browse GitHub and locate
+      <code>rifaterdemsahin/git-template</code>.  Enable
+      <em>Template repository</em> in repo settings if not already done.
+    </li>
+    <li>
+      <strong>Create your repo</strong> — Run
+      <code>gh repo create my-new-project --template rifaterdemsahin/git-template --public --clone</code>
+      to stamp all template files into a brand-new repository with a clean
+      commit history.
+    </li>
+    <li>
+      <strong>Open in VS Code</strong> — <code>cd my-new-project</code> and
+      open the folder.  The CI skeleton is already in place.
+    </li>
+    <li>
+      <strong>Prime Copilot</strong> — Open Copilot Chat and paste the
+      <a href="initial_prompt.html">initial prompt</a> (project name, tech
+      stack, purpose, conventions).  This gives Copilot full context from
+      the very first message.
+    </li>
+    <li>
+      <strong>Persist the prompt</strong> — Optionally save it to
+      <code>.github/copilot-instructions.md</code> so every team member
+      benefits automatically without any manual copy-pasting.
+    </li>
+    <li>
+      <strong>Build</strong> — Copilot is now context-aware and ready to
+      accelerate your development.
+    </li>
+  </ol>
+
+  <div class="note">
+    <strong>See also:</strong>
+    <a href="index.html">Usage Guide</a> for the
+    <code>gh repo create --template</code> command details, and
+    <a href="initial_prompt.html">Copilot Initial Prompt</a> for the
+    ready-to-use prompt template.
+  </div>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+  </script>
+
+</body>
+</html>
